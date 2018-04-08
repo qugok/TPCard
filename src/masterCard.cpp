@@ -51,7 +51,7 @@ bool MasterCard::clear() {
 std::vector<std::string> MasterCard::readAllStrings() const{
     std::vector<std::string> ans;
     int index = readAllBytes().size();
-    while (index > 0)
+    while (index > 1)
     {
         ans.push_back(readLast(index));
         index -= ans.back().size() + 1;
@@ -67,3 +67,16 @@ MasterCard::MasterCard(std::shared_ptr<Card> card) : m_card(std::move(card)){}
 
 MasterCard::MasterCard() : MasterCard(std::make_shared<Card>()){}
 
+Card MasterCard::getCurrentCard() const{
+    Card card;
+    card.writeBytesToCardForced(this->m_card.get()->readAllBytes());
+    return card;
+}
+
+char MasterCard::getId() {
+    return m_card.get()->getId();
+}
+
+const char *Wrong_Card_Type_Exception::what() const throw(){
+    return "Wrong_Card_Type_Exception";
+}

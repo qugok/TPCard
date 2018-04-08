@@ -8,6 +8,7 @@
 
 class PassportCard : private MasterCard {
 public:
+    static const int cardId = 2;
 
     /**
      * @brief считывание карты с паспортом
@@ -18,11 +19,11 @@ public:
     /**
      * @brief создание карты с паспортом
      * @param firstName имя
-     * @param secondName фамилия
+     * @param lastName фамилия
      * @param bornDate дата рождения
      * @param personalCode номер паспорта в формате строки
      */
-    PassportCard(std::string firstName, std::string secondName, std::string bornDate, std::string personalCode);
+    PassportCard(std::string firstName, std::string lastName, std::string bornDate, std::string personalCode);
 
     /**
      * @brief имя

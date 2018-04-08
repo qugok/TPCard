@@ -1,0 +1,154 @@
+.TH "BankCard" 3 "Mon Apr 9 2018" "Version 1.0" "TPCard" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+BankCard
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBMasterCard\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBBankCard\fP (const std::shared_ptr< \fBCard\fP > &card)"
+.br
+.RI "считывание банковской карты "
+.ti -1c
+.RI "\fBBankCard\fP (std::string number, std::string endDate, std::string csvCode, std::string code)"
+.br
+.RI "создание банковской карты "
+.ti -1c
+.RI "std::string \fBgetNumber\fP () const"
+.br
+.RI "номер банковской карты "
+.ti -1c
+.RI "std::string \fBgetEndDate\fP () const"
+.br
+.RI "дата окончания действия банковской карты "
+.ti -1c
+.RI "bool \fBcheckCsvCode\fP (std::string userCode) const"
+.br
+.RI "проверка csv кода "
+.ti -1c
+.RI "bool \fBcheckCode\fP (std::string userCode) const"
+.br
+.RI "проверка пин-кода, введённого пользователем "
+.ti -1c
+.RI "\fBCard\fP \fBgetCard\fP () const"
+.br
+.RI "получение созданной карты "
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "static const int \fBcardId\fP = 3"
+.br
+.in -1c
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "BankCard::BankCard (const std::shared_ptr< \fBCard\fP > & card)\fC [explicit]\fP"
+
+.PP
+считывание банковской карты 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIcard\fP 
+.RE
+.PP
+
+.SS "BankCard::BankCard (std::string number, std::string endDate, std::string csvCode, std::string code)"
+
+.PP
+создание банковской карты 
+.PP
+\fBParameters:\fP
+.RS 4
+\fInumber\fP номер карты 
+.br
+\fIendDate\fP дата окончания действия 
+.br
+\fIcsvCode\fP csv код 
+.br
+\fIcode\fP пин-код 
+.RE
+.PP
+
+.SH "Member Function Documentation"
+.PP 
+.SS "bool BankCard::checkCode (std::string userCode) const"
+
+.PP
+проверка пин-кода, введённого пользователем 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIuserCode\fP пользовательский код 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+true, если совпали 
+.br
+ false иначе 
+.RE
+.PP
+
+.SS "bool BankCard::checkCsvCode (std::string userCode) const"
+
+.PP
+проверка csv кода 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIuserCode\fP пользовательский код 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+true, если совпали 
+.br
+ false иначе 
+.RE
+.PP
+
+.SS "\fBCard\fP BankCard::getCard () const"
+
+.PP
+получение созданной карты 
+.PP
+\fBReturns:\fP
+.RS 4
+
+.RE
+.PP
+
+.SS "std::string BankCard::getEndDate () const"
+
+.PP
+дата окончания действия банковской карты 
+.PP
+\fBReturns:\fP
+.RS 4
+
+.RE
+.PP
+
+.SS "std::string BankCard::getNumber () const"
+
+.PP
+номер банковской карты 
+.PP
+\fBReturns:\fP
+.RS 4
+
+.RE
+.PP
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for TPCard from the source code\&.

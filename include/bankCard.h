@@ -8,6 +8,7 @@
 
 class BankCard : private  MasterCard {
 public:
+    static const int cardId = 3;
 
     /**
      * @brief считывание банковской карты

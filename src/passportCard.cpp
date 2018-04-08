@@ -5,39 +5,36 @@
 #include <passportCard.h>
 
 PassportCard::PassportCard(const std::shared_ptr<Card> &card) : MasterCard(card) {
-    if (this->getId() != 2)
-        throw "WRONG_CARD_TYPE";
+    if (this->getId() != cardId) {
+        throw Wrong_Card_Type_Exception();
+    }
 }
 
-PassportCard::PassportCard(std::string firstName, std::string secondName, std::string bornDate,
+PassportCard::PassportCard(std::string firstName, std::string lastName, std::string bornDate,
                            std::string personalCode)  : MasterCard(){
-    this->setId(2);
-    this->writeString(firstName);
-    this->writeString(secondName);
-    this->writeString(bornDate);
-    this->writeString(personalCode);
+    this->setId(cardId);
+    this->writeString(std::move(firstName));
+    this->writeString(std::move(lastName));
+    this->writeString(std::move(bornDate));
+    this->writeString(std::move(personalCode));
 }
 
 std::string PassportCard::getFirstName() const {
-    //todo найти правильный индекс
-    return this->readAllStrings()[4];
-}
-
-std::string PassportCard::getSecondName() const {
-    //todo найти правильный индекс
     return this->readAllStrings()[3];
 }
 
-std::string PassportCard::getBornDate() const {
-    //todo найти правильный индекс
+std::string PassportCard::getSecondName() const {
     return this->readAllStrings()[2];
 }
 
-std::string PassportCard::getPersonalCode() const {
-    //todo найти правильный индекс
+std::string PassportCard::getBornDate() const {
     return this->readAllStrings()[1];
 }
 
+std::string PassportCard::getPersonalCode() const {
+    return this->readAllStrings()[0];
+}
+
 Card PassportCard::getCard() const {
-    return *this;
+    return this->getCurrentCard();
 }

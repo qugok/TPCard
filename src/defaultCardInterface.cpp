@@ -48,4 +48,20 @@ char Card::getId() {
     return bytes[0];
 }
 
+Card::Card(const Card &card) {
+    this->writeBytesToCard(card.readAllBytes());
+}
+
+void Card::writeBytesToCardForced(const std::vector<char> &bytes) {
+    for (int i = 0; i < bytes.size() && this->bytes.size() < Card().maxSize ; i++) {
+        this->bytes.push_back(bytes[i]);
+    }
+}
+//
+//Card & Card::operator=(Card &&temp){
+//    this->bytes.clear();
+//    this->writeBytesToCard(temp.readAllBytes());
+//    return *this;
+//}
+
 Card::Card() = default;

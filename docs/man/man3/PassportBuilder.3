@@ -1,0 +1,103 @@
+.TH "PassportBuilder" 3 "Mon Apr 9 2018" "Version 1.0" "TPCard" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+PassportBuilder \- билдер для карты паспорта  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <passportBuilder\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBPassportBuilder\fP ()"
+.br
+.RI "инициализация "
+.ti -1c
+.RI "void \fBsetFirstName\fP (const std::string &firstName)"
+.br
+.RI "установка имени "
+.ti -1c
+.RI "void \fBsetLastName\fP (const std::string &lastName)"
+.br
+.RI "установка фамилии "
+.ti -1c
+.RI "void \fBsetBornDate\fP (const std::string &bornDate)"
+.br
+.RI "установка даты рождения "
+.ti -1c
+.RI "void \fBsetPersonalCode\fP (const std::string &personalCode)"
+.br
+.RI "установка номера паспорта "
+.ti -1c
+.RI "\fBCard\fP \fBcreatePassport\fP () const"
+.br
+.RI "создание карты с паспортными данными "
+.in -1c
+.SH "Detailed Description"
+.PP 
+билдер для карты паспорта 
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBCard\fP PassportBuilder::createPassport () const"
+
+.PP
+создание карты с паспортными данными 
+.PP
+\fBReturns:\fP
+.RS 4
+карта 
+.RE
+.PP
+
+.SS "void PassportBuilder::setBornDate (const std::string & bornDate)"
+
+.PP
+установка даты рождения 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIbornDate\fP значение 
+.RE
+.PP
+
+.SS "void PassportBuilder::setFirstName (const std::string & firstName)"
+
+.PP
+установка имени 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfirstName\fP значение 
+.RE
+.PP
+
+.SS "void PassportBuilder::setLastName (const std::string & lastName)"
+
+.PP
+установка фамилии 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIlastName\fP значение 
+.RE
+.PP
+
+.SS "void PassportBuilder::setPersonalCode (const std::string & personalCode)"
+
+.PP
+установка номера паспорта 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIpersonalCode\fP значение 
+.RE
+.PP
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for TPCard from the source code\&.

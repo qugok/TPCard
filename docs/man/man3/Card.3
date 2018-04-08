@@ -1,0 +1,50 @@
+.TH "Card" 3 "Mon Apr 9 2018" "Version 1.0" "TPCard" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Card \- дефолтный интерфейс карты  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <defaultCardInterface\&.h>\fP
+.PP
+Inherited by \fBMasterCard\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBCard\fP (char cardId)"
+.br
+.ti -1c
+.RI "\fBCard\fP (const \fBCard\fP &card)"
+.br
+.ti -1c
+.RI "virtual bool \fBsetId\fP (char id)"
+.br
+.ti -1c
+.RI "virtual char \fBgetId\fP ()"
+.br
+.ti -1c
+.RI "virtual std::vector< char > \fBreadAllBytes\fP () const"
+.br
+.ti -1c
+.RI "virtual bool \fBwriteBytesToCard\fP (const std::vector< char > &bytes)"
+.br
+.ti -1c
+.RI "virtual void \fBwriteBytesToCardForced\fP (const std::vector< char > &bytes)"
+.br
+.ti -1c
+.RI "virtual bool \fBdeleteLastBytes\fP (int count)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+дефолтный интерфейс карты 
+
+можно забисывать только байтикине для пользователя 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for TPCard from the source code\&.

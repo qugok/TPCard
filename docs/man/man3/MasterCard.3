@@ -1,0 +1,61 @@
+.TH "MasterCard" 3 "Mon Apr 9 2018" "Version 1.0" "TPCard" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+MasterCard \- улучшеный интерфейс карты  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <masterCard\&.h>\fP
+.PP
+Inherits \fBCard\fP\&.
+.PP
+Inherited by \fBBankCard\fP\fC [private]\fP, and \fBPassportCard\fP\fC [private]\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBMasterCard\fP (std::shared_ptr< \fBCard\fP > card)"
+.br
+.ti -1c
+.RI "bool \fBsetId\fP (char id) override"
+.br
+.ti -1c
+.RI "std::vector< char > \fBreadAllBytes\fP () const override"
+.br
+.ti -1c
+.RI "char \fBgetId\fP () override"
+.br
+.ti -1c
+.RI "bool \fBwriteBytesToCard\fP (const std::vector< char > &bytes) override"
+.br
+.ti -1c
+.RI "bool \fBdeleteLastBytes\fP (int count) override"
+.br
+.ti -1c
+.RI "bool \fBwriteString\fP (std::string value)"
+.br
+.ti -1c
+.RI "std::string \fBreadLast\fP () const"
+.br
+.ti -1c
+.RI "std::vector< std::string > \fBreadAllStrings\fP () const"
+.br
+.ti -1c
+.RI "\fBCard\fP \fBgetCurrentCard\fP () const"
+.br
+.ti -1c
+.RI "bool \fBclear\fP ()"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+улучшеный интерфейс карты 
+
+так же не рекомендуется для использования пользователем 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for TPCard from the source code\&.

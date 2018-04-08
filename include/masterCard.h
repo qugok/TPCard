@@ -8,7 +8,9 @@
 #include <string>
 #include <exception>
 #include <memory>
-
+/**
+ * @brief улучшеный интерфейс карты \brief так же не рекомендуется для использования пользователем
+ */
 class MasterCard : public Card
 {
 private:
@@ -24,6 +26,8 @@ public:
 
     std::vector<char> readAllBytes() const override;
 
+    char getId() override;
+
     bool writeBytesToCard(const std::vector<char> &bytes) override;
 
     bool deleteLastBytes(int count) override;
@@ -34,6 +38,13 @@ public:
 
     std::vector<std::string> readAllStrings() const;
 
+    Card getCurrentCard() const;
+
     bool clear();
 
+};
+
+class Wrong_Card_Type_Exception : public std::exception{
+public:
+    const char *what() const throw() override;
 };
