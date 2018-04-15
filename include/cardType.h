@@ -4,4 +4,12 @@
 
 #pragma once
 
-enum cardType;
+//enum cardType;
+
+enum cardType
+{
+    emptyCard,
+    unknownType,
+    PassportCard,
+    BankCard
+};
