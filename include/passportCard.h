@@ -23,7 +23,8 @@ public:
      * @param bornDate дата рождения
      * @param personalCode номер паспорта в формате строки
      */
-    PassportCard(std::string firstName, std::string lastName, std::string bornDate, std::string personalCode);
+    PassportCard(const std::string& firstName, const std::string& lastName, const std::string& bornDate,
+                 const std::string& personalCode);
 
     /**
      * @brief имя

@@ -32,7 +32,7 @@ public:
 
     bool deleteLastBytes(int count) override;
 
-    bool writeString(std::string value);
+    bool writeString(const std::string& value);
 
     std::string readLast() const ;
 

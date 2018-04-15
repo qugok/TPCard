@@ -4,7 +4,6 @@
 
 #include <masterCard.h>
 #include <algorithm>
-#include <utility>
 
 bool MasterCard::deleteLastBytes(int count) {
     return m_card->deleteLastBytes(count);
@@ -22,7 +21,7 @@ bool MasterCard::setId(char id) {
     return m_card->setId(id);
 }
 
-bool MasterCard::writeString(std::string value) {
+bool MasterCard::writeString(const std::string& value) {
     std::vector<char> bytes;
     bytes.push_back(0);
     for (char i : value) {

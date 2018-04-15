@@ -10,13 +10,13 @@ PassportCard::PassportCard(const std::shared_ptr<Card> &card) : MasterCard(card)
     }
 }
 
-PassportCard::PassportCard(std::string firstName, std::string lastName, std::string bornDate,
-                           std::string personalCode)  : MasterCard(){
+PassportCard::PassportCard(const std::string& firstName, const std::string& lastName, const std::string& bornDate,
+                           const std::string& personalCode)  : MasterCard(){
     this->setId(cardId);
-    this->writeString(std::move(firstName));
-    this->writeString(std::move(lastName));
-    this->writeString(std::move(bornDate));
-    this->writeString(std::move(personalCode));
+    this->writeString(firstName);
+    this->writeString(lastName);
+    this->writeString(bornDate);
+    this->writeString(personalCode);
 }
 
 std::string PassportCard::getFirstName() const {

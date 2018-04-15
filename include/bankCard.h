@@ -23,7 +23,7 @@ public:
      * @param csvCode csv код
      * @param code пин-код
      */
-    BankCard(std::string number, std::string endDate, std::string csvCode, std::string code);
+    BankCard(const std::string& number,const std::string& endDate,const std::string& csvCode,const std::string& code);
 
     /**
      * @brief номер банковской карты
@@ -42,14 +42,14 @@ public:
      * @param userCode пользовательский код
      * @return true, если совпали \n false иначе
      */
-    bool checkCsvCode(std::string userCode) const ;
+    bool checkCsvCode(const std::string& userCode) const ;
 
     /**
      * @brief проверка пин-кода, введённого пользователем
      * @param userCode пользовательский код
      * @return true, если совпали \n false иначе
      */
-    bool checkCode(std::string userCode) const ;
+    bool checkCode(const std::string& userCode) const ;
 
     /**
      * @brief получение созданной карты

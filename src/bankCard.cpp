@@ -9,7 +9,7 @@ BankCard::BankCard(const std::shared_ptr<Card> &card) : MasterCard(card) {
         throw Wrong_Card_Type_Exception();
 }
 
-BankCard::BankCard(std::string number, std::string endDate, std::string csvCode, std::string code) : MasterCard() {
+BankCard::BankCard(const std::string& number,const std::string& endDate,const std::string& csvCode,const std::string& code) : MasterCard() {
     this->setId(cardId);
     this->writeString(code);
     this->writeString(csvCode);
@@ -25,11 +25,11 @@ std::string BankCard::getEndDate() const {
     return this->readAllStrings()[1];
 }
 
-bool BankCard::checkCsvCode(std::string userCode) const {
+bool BankCard::checkCsvCode(const std::string& userCode) const {
     return this->readAllStrings()[2] == userCode;
 }
 
-bool BankCard::checkCode(std::string userCode) const {
+bool BankCard::checkCode(const std::string& userCode) const {
     return this->readAllStrings()[3] == userCode;
 }
 
